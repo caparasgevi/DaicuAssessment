@@ -80,11 +80,11 @@ const EmailPreview = ({ formData, s }) => (
 
       {/* Footer */}
       <div style={{ padding: '18px 20px', borderTop: '1px solid #f5f5f5', backgroundColor: '#fafafa', flexShrink: 0 }}>
-        <p style={{ fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#bbbbbb', margin: '0 0 4px 0' }}>To</p>
-        <p style={{ fontSize: '12px', color: '#999999', margin: 0, fontWeight: '400' }}>
-          nicomarc.reyes@bulsu.edu.ph
-        </p>
-      </div>
+  <p style={{ fontSize: '9px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#bbbbbb', margin: '0 0 4px 0' }}>To</p>
+  <p style={{ fontSize: '12px', color: '#999999', margin: 0, fontWeight: '400' }}>
+    {import.meta.env.VITE_RECIPIENT_EMAILS}
+  </p>
+</div>
 
     </div>
   </div>
