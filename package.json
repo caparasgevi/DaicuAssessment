@@ -1,11 +1,8 @@
 {
   "scripts": {
-  "dev:frontend": "pnpm --prefix contactUs dev",
-  "dev:backend": "pnpm --prefix contactBackend dev",
-  "dev": "concurrently -n \"FE,BE\" -c \"cyan,magenta\" \"pnpm dev:frontend\" \"pnpm dev:backend\""
-},
-  "dependencies": {
-    "mongodb": "^7.2.0"
+    "dev:frontend": "pnpm --prefix contactUs dev",
+    "dev:backend": "pnpm --prefix contactBackend dev",
+    "dev": "concurrently -n \"FE,BE\" -c \"cyan,magenta\" \"pnpm dev:frontend\" \"pnpm dev:backend\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
