@@ -79,11 +79,11 @@ const ContactForm = ({ formData, onChange, onSubmit, loading, status, s }) => (
           <span
             style={{
               fontSize: "10px",
-              color: formData.message.length > 200 ? "#ef4444" : "#ccc",
+              color: formData.message.length > 1000 ? "#ef4444" : "#ccc",
               letterSpacing: "0.05em",
             }}
           >
-            {formData.message.length} / 300
+            {formData.message.length} / 1000
           </span>
         </div>
         <textarea
@@ -91,7 +91,7 @@ const ContactForm = ({ formData, onChange, onSubmit, loading, status, s }) => (
           value={formData.message}
           onChange={onChange}
           required
-          maxLength={300}
+          maxLength={1000}
           rows={4}
           style={{
             ...s.input,

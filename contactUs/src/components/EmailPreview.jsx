@@ -43,7 +43,7 @@ const EmailPreview = ({ formData, s }) => (
           fontWeight: '500',
           wordBreak: 'break-word' 
         }}>
-          {formData.name || '—'}
+          {formData.name || 'Your name'}
         </p>
         <p style={{ 
           fontSize: '13px', 
@@ -52,7 +52,7 @@ const EmailPreview = ({ formData, s }) => (
           fontWeight: '400',
           wordBreak: 'break-all' 
         }}>
-          {formData.email || '—'}
+          {formData.email || 'Your email'}
         </p>
       </div>
 
