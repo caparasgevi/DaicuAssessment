@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import ContactForm from "../components/ContactForm.jsx";
 import EmailPreview from "../components/EmailPreview.jsx";
-import { getStyles } from "../styles/contactStyles.js";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState({ text: "", type: "" });
   const [loading, setLoading] = useState(false);
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 768 : false,
-  );
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,25 +30,17 @@ const ContactPage = () => {
     }
   };
 
-  const s = getStyles({
-    loading,
-    hasContent: !!(formData.name || formData.email || formData.message),
-    hasMessage: !!formData.message,
-    isMobile,
-  });
-
   return (
-    <div style={s.page}>
-      <div style={s.grid}>
+    <div className="min-h-screen bg-white flex items-center justify-center px-6 py-16 font-sans">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-18 items-start">
         <ContactForm
           formData={formData}
           onChange={handleChange}
           onSubmit={handleSubmit}
           loading={loading}
           status={status}
-          s={s}
         />
-        <EmailPreview formData={formData} s={s} />
+        <EmailPreview formData={formData} />
       </div>
     </div>
   );
